@@ -1,0 +1,26 @@
+@import '../../global/refs.scss';
+
+.cart-container {
+  width: 100vw;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202124;
+    color: white;
+    font-size: 20px;
+    height: 130px;
+
+    h1 {
+      font-weight: normal;
+    }
+  }
+
+  .list-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px;
+  }
+} 

@@ -1,0 +1,57 @@
+@import '../../global/refs.scss';
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.itemList-container {
+  display: flex;
+  border: 1px solid #E0E0E0;
+  flex-direction: column;
+  width: 100vw;
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #202124;
+    color: white;
+    font-size: 20px;
+    height: 130px;
+  
+    h1 {
+      font-weight: normal;
+      margin-left: 5vw;
+    }
+  
+    button {
+      background-image: url(../../static/carrinho.svg);
+      background-color: #202124;
+      border: none;
+      width: 60px;
+      height: 60px;
+      margin-right: 5vw;
+    }
+  }
+
+  .filterList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .tagFilter {
+      height: 100vh;
+      border: 2px solid #E0E0E0;
+    }
+
+    .list {
+      margin: 8vh 0 5vh 0;
+      width: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

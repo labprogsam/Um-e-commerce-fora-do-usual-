@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import List from '../List';
 import TagFilter from '../TagFilter';
+import ImportantTags from '../ImportantTags';
 import './ItemList.scss';
 
 class ItemList extends Component {
@@ -56,6 +57,7 @@ class ItemList extends Component {
         <div className="filterList">
           <div className="tagFilter">
             <TagFilter handleSearch={this.handleSearch} />
+            <ImportantTags items={items} />
           </div>
           <div className="list">
             <List items={items} handleInsert={this.handleInsert} />

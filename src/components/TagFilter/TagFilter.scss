@@ -4,6 +4,8 @@
   display: flex;
   border: 1px solid #E0E0E0;
   flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 
   input {
     width: 100%;
@@ -19,6 +21,6 @@
     border: none;
     height: 40px;
     width: 40px;
-    margin: 20px;
+    margin: 0px 20px;
   }
 }

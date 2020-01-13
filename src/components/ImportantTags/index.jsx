@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Tag from '../Tag';
+import './ImportantTags.scss';
 
 class ImportantTags extends Component {
   constructor(props) {
     super(props);
     this.handleOrderTags = this.handleOrderTags.bind(this);
-    this.handleInsertTags = this.handleInsertTags.bind(this);
-    this.state = {
-      tags: [],
-    };
   }
 
   handleOrderTags() {
@@ -25,32 +23,21 @@ class ImportantTags extends Component {
         map.set(tag, map.get(tag) + 1);
       }
     }
-    // Aqui eu ordeno as tags, da que mais aparece, para a q menos aparece
+    // Aqui eu ordeno as tags, em ordem crescente
     const mapAsc = [...map].sort((a, b) => {
       if (a[1] < b[1]) return 1;
       if (a[1] > b[1]) return -1;
       return 0;
     });
-    return mapAsc;
-  }
-
-  // items é um array de duplas do tipo [tag, value].
-  // ERRO OCORRE AQUI
-  handleInsertTags(items) {
-    const { tags } = this.state;
-    for (let i = 0; i < 4; i += 1) {
-      this.setState({
-        tags: [items[i][0], ...tags],
-      });
-    }
+    return mapAsc.slice(0, 5);
   }
 
   render() {
-    this.handleInsertTags(this.handleOrderTags());
-    const { tags } = this.state;
-    console.log(tags);
+    const arrOrder = this.handleOrderTags();
     return (
-      <div> </div>
+      <div className="importantTags">
+        {arrOrder.map((x, i) => <Tag key={i} tag={x[0]} />)}
+      </div>
     );
   }
 }
